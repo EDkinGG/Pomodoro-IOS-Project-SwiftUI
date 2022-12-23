@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FC03CF6D29556EA30060902A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03CF6C29556EA30060902A /* EditProfileView.swift */; };
+		FC03CF73295584740060902A /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03CF72295584740060902A /* FormField.swift */; };
+		FC29B2E12955B2530083DA93 /* ButtonModifers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E02955B2530083DA93 /* ButtonModifers.swift */; };
+		FC29B2E42955BB730083DA93 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E32955BB730083DA93 /* ImagePicker.swift */; };
+		FC29B2E62955FA860083DA93 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E52955FA860083DA93 /* PhotoPicker.swift */; };
 		FCF96416294F1F45005C32D4 /* PomodoroMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF96415294F1F45005C32D4 /* PomodoroMain.swift */; };
 		FCFB593729434E9300B49809 /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB593629434E9300B49809 /* PomodoroApp.swift */; };
 		FCFB593929434E9300B49809 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB593829434E9300B49809 /* ContentView.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		FC03CF6C29556EA30060902A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		FC03CF72295584740060902A /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		FC29B2E02955B2530083DA93 /* ButtonModifers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifers.swift; sourceTree = "<group>"; };
+		FC29B2E32955BB730083DA93 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		FC29B2E52955FA860083DA93 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		FCF96415294F1F45005C32D4 /* PomodoroMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroMain.swift; sourceTree = SOURCE_ROOT; };
 		FCFB593329434E9300B49809 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFB593629434E9300B49809 /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
@@ -57,8 +65,19 @@
 		FC03CF71295576FA0060902A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				FC03CF72295584740060902A /* FormField.swift */,
+				FC29B2E02955B2530083DA93 /* ButtonModifers.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		FC29B2E22955BB0C0083DA93 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC29B2E32955BB730083DA93 /* ImagePicker.swift */,
+				FC29B2E52955FA860083DA93 /* PhotoPicker.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FCFB592A29434E9300B49809 = {
@@ -80,6 +99,7 @@
 		FCFB593529434E9300B49809 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				FC29B2E22955BB0C0083DA93 /* Utilities */,
 				FC03CF70295576EC0060902A /* Views */,
 				FC03CF71295576FA0060902A /* Component */,
 				FCFB593629434E9300B49809 /* PomodoroApp.swift */,
@@ -180,11 +200,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC03CF73295584740060902A /* FormField.swift in Sources */,
 				FC03CF6D29556EA30060902A /* EditProfileView.swift in Sources */,
 				FCFB59702943831900B49809 /* LoginRegister.swift in Sources */,
+				FC29B2E42955BB730083DA93 /* ImagePicker.swift in Sources */,
 				FCFB593929434E9300B49809 /* ContentView.swift in Sources */,
+				FC29B2E12955B2530083DA93 /* ButtonModifers.swift in Sources */,
 				FCF96416294F1F45005C32D4 /* PomodoroMain.swift in Sources */,
 				FCFB596E294382C800B49809 /* Home.swift in Sources */,
+				FC29B2E62955FA860083DA93 /* PhotoPicker.swift in Sources */,
 				FCFB593729434E9300B49809 /* PomodoroApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +345,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,7 +374,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
