@@ -12,13 +12,22 @@
 		FC29B2E12955B2530083DA93 /* ButtonModifers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E02955B2530083DA93 /* ButtonModifers.swift */; };
 		FC29B2E42955BB730083DA93 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E32955BB730083DA93 /* ImagePicker.swift */; };
 		FC29B2E62955FA860083DA93 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29B2E52955FA860083DA93 /* PhotoPicker.swift */; };
+		FC457CF22956ADAC002AAC28 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CF12956ADAC002AAC28 /* UserModel.swift */; };
+		FC457CF42956AF1B002AAC28 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CF32956AF1B002AAC28 /* Extensions.swift */; };
+		FC457CF62956C6A0002AAC28 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CF52956C6A0002AAC28 /* ProfileView.swift */; };
+		FC457CF82956C9B0002AAC28 /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CF72956C9B0002AAC28 /* AboutUs.swift */; };
+		FC457CFA2956EC75002AAC28 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CF92956EC75002AAC28 /* JSONManager.swift */; };
+		FC457CFC2956F0AA002AAC28 /* dataFetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC457CFB2956F0AA002AAC28 /* dataFetching.swift */; };
+		FC6F3B4F2956378A00843503 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC6F3B4E2956378A00843503 /* FirebaseAnalytics */; };
+		FC6F3B512956378A00843503 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC6F3B502956378A00843503 /* FirebaseAuth */; };
+		FC6F3B532956378A00843503 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC6F3B522956378A00843503 /* FirebaseFirestore */; };
+		FC6F3B552956378A00843503 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FC6F3B542956378A00843503 /* FirebaseMessaging */; };
+		FC6F3B572956378A00843503 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FC6F3B562956378A00843503 /* FirebaseStorage */; };
 		FCF96416294F1F45005C32D4 /* PomodoroMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF96415294F1F45005C32D4 /* PomodoroMain.swift */; };
 		FCFB593729434E9300B49809 /* PomodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB593629434E9300B49809 /* PomodoroApp.swift */; };
 		FCFB593929434E9300B49809 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB593829434E9300B49809 /* ContentView.swift */; };
 		FCFB593B29434E9500B49809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFB593A29434E9500B49809 /* Assets.xcassets */; };
 		FCFB593E29434E9500B49809 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCFB593D29434E9500B49809 /* Preview Assets.xcassets */; };
-		FCFB596229434E9600B49809 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FCFB596129434E9600B49809 /* FirebaseAuth */; };
-		FCFB596429434E9600B49809 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FCFB596329434E9600B49809 /* FirebaseFirestore */; };
 		FCFB596629434E9600B49809 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCFB596529434E9600B49809 /* GoogleService-Info.plist */; };
 		FCFB596E294382C800B49809 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB596D294382C800B49809 /* Home.swift */; };
 		FCFB59702943831900B49809 /* LoginRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFB596F2943831900B49809 /* LoginRegister.swift */; };
@@ -30,6 +39,12 @@
 		FC29B2E02955B2530083DA93 /* ButtonModifers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifers.swift; sourceTree = "<group>"; };
 		FC29B2E32955BB730083DA93 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FC29B2E52955FA860083DA93 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		FC457CF12956ADAC002AAC28 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		FC457CF32956AF1B002AAC28 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FC457CF52956C6A0002AAC28 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FC457CF72956C9B0002AAC28 /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		FC457CF92956EC75002AAC28 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		FC457CFB2956F0AA002AAC28 /* dataFetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataFetching.swift; sourceTree = "<group>"; };
 		FCF96415294F1F45005C32D4 /* PomodoroMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroMain.swift; sourceTree = SOURCE_ROOT; };
 		FCFB593329434E9300B49809 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFB593629434E9300B49809 /* PomodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroApp.swift; sourceTree = "<group>"; };
@@ -46,8 +61,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCFB596229434E9600B49809 /* FirebaseAuth in Frameworks */,
-				FCFB596429434E9600B49809 /* FirebaseFirestore in Frameworks */,
+				FC6F3B552956378A00843503 /* FirebaseMessaging in Frameworks */,
+				FC6F3B4F2956378A00843503 /* FirebaseAnalytics in Frameworks */,
+				FC6F3B512956378A00843503 /* FirebaseAuth in Frameworks */,
+				FC6F3B572956378A00843503 /* FirebaseStorage in Frameworks */,
+				FC6F3B532956378A00843503 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				FC03CF6C29556EA30060902A /* EditProfileView.swift */,
+				FC457CF52956C6A0002AAC28 /* ProfileView.swift */,
+				FC457CF72956C9B0002AAC28 /* AboutUs.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -76,8 +96,19 @@
 			children = (
 				FC29B2E32955BB730083DA93 /* ImagePicker.swift */,
 				FC29B2E52955FA860083DA93 /* PhotoPicker.swift */,
+				FC457CF32956AF1B002AAC28 /* Extensions.swift */,
+				FC457CF92956EC75002AAC28 /* JSONManager.swift */,
+				FC457CFB2956F0AA002AAC28 /* dataFetching.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FC457CF02956AD7E002AAC28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC457CF12956ADAC002AAC28 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FCFB592A29434E9300B49809 = {
@@ -99,6 +130,7 @@
 		FCFB593529434E9300B49809 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				FC457CF02956AD7E002AAC28 /* Models */,
 				FC29B2E22955BB0C0083DA93 /* Utilities */,
 				FC03CF70295576EC0060902A /* Views */,
 				FC03CF71295576FA0060902A /* Component */,
@@ -139,8 +171,11 @@
 			);
 			name = Pomodoro;
 			packageProductDependencies = (
-				FCFB596129434E9600B49809 /* FirebaseAuth */,
-				FCFB596329434E9600B49809 /* FirebaseFirestore */,
+				FC6F3B4E2956378A00843503 /* FirebaseAnalytics */,
+				FC6F3B502956378A00843503 /* FirebaseAuth */,
+				FC6F3B522956378A00843503 /* FirebaseFirestore */,
+				FC6F3B542956378A00843503 /* FirebaseMessaging */,
+				FC6F3B562956378A00843503 /* FirebaseStorage */,
 			);
 			productName = Pomodoro;
 			productReference = FCFB593329434E9300B49809 /* Pomodoro.app */;
@@ -171,7 +206,7 @@
 			);
 			mainGroup = FCFB592A29434E9300B49809;
 			packageReferences = (
-				FCFB596029434E9600B49809 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FCFB593429434E9300B49809 /* Products */;
 			projectDirPath = "";
@@ -201,15 +236,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC03CF73295584740060902A /* FormField.swift in Sources */,
+				FC457CF62956C6A0002AAC28 /* ProfileView.swift in Sources */,
 				FC03CF6D29556EA30060902A /* EditProfileView.swift in Sources */,
 				FCFB59702943831900B49809 /* LoginRegister.swift in Sources */,
 				FC29B2E42955BB730083DA93 /* ImagePicker.swift in Sources */,
 				FCFB593929434E9300B49809 /* ContentView.swift in Sources */,
 				FC29B2E12955B2530083DA93 /* ButtonModifers.swift in Sources */,
 				FCF96416294F1F45005C32D4 /* PomodoroMain.swift in Sources */,
+				FC457CF42956AF1B002AAC28 /* Extensions.swift in Sources */,
 				FCFB596E294382C800B49809 /* Home.swift in Sources */,
 				FC29B2E62955FA860083DA93 /* PhotoPicker.swift in Sources */,
 				FCFB593729434E9300B49809 /* PomodoroApp.swift in Sources */,
+				FC457CF22956ADAC002AAC28 /* UserModel.swift in Sources */,
+				FC457CFA2956EC75002AAC28 /* JSONManager.swift in Sources */,
+				FC457CF82956C9B0002AAC28 /* AboutUs.swift in Sources */,
+				FC457CFC2956F0AA002AAC28 /* dataFetching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +415,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,26 +453,41 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FCFB596029434E9600B49809 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				kind = exactVersion;
+				version = 9.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FCFB596129434E9600B49809 /* FirebaseAuth */ = {
+		FC6F3B4E2956378A00843503 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCFB596029434E9600B49809 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FC6F3B502956378A00843503 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		FCFB596329434E9600B49809 /* FirebaseFirestore */ = {
+		FC6F3B522956378A00843503 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCFB596029434E9600B49809 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		FC6F3B542956378A00843503 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		FC6F3B562956378A00843503 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC6F3B4D2956378A00843503 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

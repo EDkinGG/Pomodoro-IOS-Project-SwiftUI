@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var isUserCurrentlyLoggedOut: Bool = false
      
     var body: some View {
+        
         NavigationView {
             if self.isUserCurrentlyLoggedOut {
                 Home(isUserCurrentlyLoggedOut:
@@ -20,8 +21,18 @@ struct ContentView: View {
             }else {
                 LoginRegister(isUserCurrentlyLoggedOut: $isUserCurrentlyLoggedOut)
             }
+        }.onAppear {
+            Auth.auth().addStateDidChangeListener { auth , user in
+                if user != nil {
+                    isUserCurrentlyLoggedOut.toggle()
+                }
+            }
         }
     }
+    
+//    var content: some View {
+//
+//    }
 }
  
 struct ContentView_Previews: PreviewProvider {

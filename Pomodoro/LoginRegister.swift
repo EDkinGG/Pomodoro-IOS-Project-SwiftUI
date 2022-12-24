@@ -7,6 +7,27 @@
  
 import SwiftUI
 import Firebase
+
+struct SecureTextField: View {
+    
+    @State private var isSecureField: Bool = true
+    @Binding var text: String
+    
+    var body: some View{
+        HStack{
+            if isSecureField {
+                SecureField("Password", text: $text)
+            } else {
+                TextField("Password", text: $text)
+            }
+        }.overlay(alignment: .trailing) {
+            Image(systemName: isSecureField ? "eye.slash" : "eye" )
+                .onTapGesture {
+                    isSecureField.toggle()
+                }
+        }
+    }
+}
  
 struct LoginRegister: View {
      
@@ -45,11 +66,16 @@ struct LoginRegister: View {
                     )
                     Group {
                         TextField("First Name", text: $fname)
+                            .autocapitalization(.none)
+                            .autocorrectionDisabled(true)
                         TextField("Last Name", text: $lname)
+                            .autocapitalization(.none)
+                            .autocorrectionDisabled(true)
                         TextField("Email", text: $email)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
-                        SecureField("Password", text: $password)
+                            .autocorrectionDisabled(true)
+                        SecureTextField(text: $password)
                     }
                     .padding()
                     .background(Color.white)
@@ -65,7 +91,10 @@ struct LoginRegister: View {
                                 .padding(.vertical, 10)
                                 .font(.system(size: 28, weight: .bold))
                             Spacer()
-                        }.background(Color.orange)
+                        }.background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .purple], startPoint: .top , endPoint: .bottomTrailing))
+                            )
    
                     }.cornerRadius(10)
                 }else{
@@ -79,7 +108,8 @@ struct LoginRegister: View {
                         TextField("Email", text: $email)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
-                        SecureField("Password", text: $password)
+                            .autocorrectionDisabled(true)
+                        SecureTextField(text: $password)
                     }
                     .padding()
                     .background(Color.white)
@@ -95,7 +125,10 @@ struct LoginRegister: View {
                                 .padding(.vertical, 10)
                                 .font(.system(size: 28, weight: .bold))
                             Spacer()
-                        }.background(Color.orange)
+                        }.background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(.linearGradient(colors: [.blue, .purple], startPoint: .top , endPoint: .bottomTrailing))
+                            )
    
                     }.cornerRadius(10)
                     .alert(isPresented: $shouldShowLoginAlert) {
@@ -110,7 +143,7 @@ struct LoginRegister: View {
         } //End ScrollView
         .navigationViewStyle(StackNavigationViewStyle())
         .background(
-            LinearGradient(gradient: Gradient(colors: [.purple,.pink, .red]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.5),.blue.opacity(0.3), .white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
         )
     }
      

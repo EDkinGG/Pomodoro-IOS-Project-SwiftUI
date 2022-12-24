@@ -10,8 +10,10 @@ import SwiftUI
 struct PomodoroMain: View {
     @State var progress: CGFloat = 0
     @State var timerStringValue: String = "00:00"
+    
     @State var isStarted: Bool = false
     @State var addNewTimer: Bool = false
+    @State var isPaused: Bool = false
     
     @State var hour: Int = 0
     @State var minutes: Int = 0
@@ -42,11 +44,13 @@ struct PomodoroMain: View {
     
     //    Start Timer
     func startTimer(){
-        withAnimation(.easeInOut(duration: 0.25)){isStarted = true}
-        timerStringValue = "\(hour == 0 ? "" : "\(hour):")\(minutes >= 10 ? "\(minutes)":"0\(minutes)")\(seconds >= 10 ? "\(seconds)":"0\(seconds)")"
-        //        Total seconds for timer animation
-        totalSeconds = (hour * 3600) + (minutes * 60) + seconds
-        staticTotalSeconds = totalSeconds
+        if !(hour == 0 && minutes == 0 && seconds == 0){
+            withAnimation(.easeInOut(duration: 0.25)){isStarted = true}
+            timerStringValue = "\(hour == 0 ? "" : "\(hour):")\(minutes >= 10 ? "\(minutes)":"0\(minutes)")\(seconds >= 10 ? "\(seconds)":"0\(seconds)")"
+            //        Total seconds for timer animation
+            totalSeconds = (hour * 3600) + (minutes * 60) + seconds
+            staticTotalSeconds = totalSeconds
+        }
     }
     //    Stop Timer
     func stopTimer(){
@@ -61,8 +65,15 @@ struct PomodoroMain: View {
         staticTotalSeconds = 0
         timerStringValue = "00:00"
     }
+    //    Pause Timer
+    func pauseTimer(){
+        isStarted = false
+        isPaused = true
+    }
     //    updatingTimer
     func updateTimer(){
+        isStarted = true
+        isPaused = false
         totalSeconds -= 1
         progress = CGFloat(totalSeconds) / CGFloat(staticTotalSeconds)
         progress = (progress < 0 ? 0 : progress )
@@ -104,15 +115,15 @@ struct PomodoroMain: View {
                     .trim(from: 0, to: progress)
                     .stroke(.white.opacity(0.03), lineWidth:80)
                 Circle()
-                    .stroke(.blue, lineWidth: 5)
+                    .stroke(.purple, lineWidth: 15)
                     .blur(radius: 15)
                     .padding(-2)
                 Circle()
                 //                    .fill(Color("BG"))
-                    .fill(.gray.opacity(0.1))
+                    .fill(.gray.opacity(0.2))
                 Circle()
                     .trim(from: 0, to: progress)
-                    .stroke(.blue.opacity(0.7), lineWidth: 10)
+                    .stroke(.red.opacity(0.5), lineWidth: 15)
                 Circle()
                     .fill(.blue)
                     .frame(width: 30, height: 30)
@@ -132,22 +143,55 @@ struct PomodoroMain: View {
             .frame(height: 400)
             .rotationEffect(.init(degrees: -90))
             .animation(.easeInOut, value: progress)
-            Button {
-                if isStarted{
-                    stopTimer()
-                }else{
-                    addNewTimer = true
-                }
-            } label: {
-                Image(systemName: !isStarted ? "timer" : "pause")
-                    .font(.largeTitle.bold())
-                    .foregroundColor(.white)
-                    .frame(width: 80,height: 80)
-                    .background{
-                        Circle()
-                            .fill(.blue)
+            .offset(y: -100)
+            
+            HStack(alignment: .center, spacing: 20){
+                Button {
+                    if isStarted{
+                        pauseTimer()
                     }
+                    else if isPaused{
+                        updateTimer()
+                    }
+                    else{
+                        addNewTimer = true
+                    }
+                } label: {
+                    Image(systemName: (!isStarted && !isPaused) ? "timer" : "pause")
+                        .font(.largeTitle.bold())
+                        .foregroundColor(.white)
+                        .frame(width: 80,height: 80)
+                        .background{
+                            Circle()
+                                .fill(.blue)
+                        }
+                        .shadow(color: Color.blue.opacity(0.5),radius: 10, x: 0.0, y: 10)
+                    
+                }
+                Button {
+                    if isStarted{
+                        stopTimer()
+                    }
+                    else if isPaused {
+                        isStarted = false
+                        isPaused = false
+                        stopTimer()
+                    }
+                } label: {
+                    Image(systemName:"restart")
+                        .font(.largeTitle.bold())
+                        .foregroundColor(.white)
+                        .frame(width: 80,height: 80)
+                        .background{
+                            Circle()
+                                .fill(.blue)
+                        }
+                        .shadow(color: Color.blue.opacity(0.5),radius: 10, x: 0.0, y: 10)
+                }
+//                .disabled(!isStarted && isPaused)
+//                .opacity( !isStarted || !isPaused ? 0.5 : 1)
             }
+
         }
         
         .padding(10)
@@ -170,7 +214,10 @@ struct PomodoroMain: View {
             }
             .animation(.easeInOut, value: addNewTimer)
         })
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(.light)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.purple,.blue, .white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+        )
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) {
             _ in
             if isStarted{
@@ -242,8 +289,8 @@ struct PomodoroMain: View {
                             .fill(.blue)
                     }
             }
-            .disabled(seconds == 0)
-            .opacity(seconds == 0 ? 0.5 : 1)
+            .disabled(isStarted)
+//            .opacity(!isStarted ? 0.5 : 1)
             .padding(.top)
         }
         .padding( )
@@ -251,7 +298,7 @@ struct PomodoroMain: View {
         .background{
             RoundedRectangle(cornerRadius: 10, style: .circular)
             //                .fill(Color("BG"))
-                .fill(Color(.darkGray))
+                .fill(Color(.lightGray))
                 .ignoresSafeArea()
         }
     }

@@ -13,6 +13,7 @@ struct Home: View {
     @State var shouldShowLogOutOptions = false
     @Binding var isUserCurrentlyLoggedOut : Bool
     @State var navigatedPomo = false
+    @State var navigatedPro = false
     @State var navigatedEdit = false
     @State var navigatedAbout = false
     
@@ -23,7 +24,12 @@ struct Home: View {
             
             ScrollView{
                 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack {
+                    
+                    VStack (alignment: .leading) {
+                        Text("Home").font(.system(size: 56, weight: .heavy, design: .monospaced))
+                    }
+                    
                     NavigationLink("", destination: PomodoroMain(), isActive: $navigatedPomo)
                     Button(action: { self.navigatedPomo.toggle() } ) {
                         HStack{
@@ -49,6 +55,16 @@ struct Home: View {
     //                .padding(.top)
     //                .offset(y: 0)
                     
+                    NavigationLink("", destination: ProfileView(), isActive: $navigatedPro)
+                    Button(action: {self.navigatedPro.toggle()}){
+                        HStack{
+                            Image(systemName: "person")
+                            Text("Profile").font(.title)
+                        }
+                        .modifier(ButtonModifers())
+                        .padding()
+                    }
+                    
                     NavigationLink("", destination: EditProfileView(), isActive: $navigatedEdit)
                     Button(action: {self.navigatedEdit.toggle()}){
                         HStack{
@@ -59,7 +75,9 @@ struct Home: View {
                         .padding()
                     }
                     
-                    Button(action: {}){
+                    
+                    NavigationLink("", destination: AboutUs(), isActive: $navigatedAbout)
+                    Button(action: {self.navigatedAbout.toggle()}){
                         HStack{
                             Image(systemName: "doc.text.image.fill")
                             Text("About Us").font(.title)
@@ -78,19 +96,7 @@ struct Home: View {
                             }
                             .modifier(ButtonModifers())
                             .padding()
-                        
-    //                    Text("Sign Out")
-    //                        .bold()
-    //                        .frame(width: 200, height: 40)
-    //                        .background(
-    //                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-    //                                .fill(.linearGradient(colors: [.pink, .red], startPoint: .top , endPoint: .bottomTrailing))
-    //                        )
-    //                        .foregroundColor(.white)
                     }
-    //                .padding(.top)
-    //                .offset(y: 100)
-                    
                 }
                 .padding()
                 .actionSheet(isPresented: $shouldShowLogOutOptions) {
@@ -103,7 +109,9 @@ struct Home: View {
                         .cancel()
                     ])
                 }
-            }
+            }.background(
+                LinearGradient(gradient: Gradient(colors: [.purple.opacity(0.5),.blue.opacity(0.3), .white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            )
         }
     }
     

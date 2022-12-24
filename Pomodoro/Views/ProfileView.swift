@@ -1,15 +1,15 @@
 //
-//  EditProfileView.swift
+//  ProfileView.swift
 //  Pomodoro
 //
-//  Created by Ashfaq on 12/23/22.
+//  Created by Ashfaq on 12/24/22.
 //
 
 import SwiftUI
-import PhotosUI
 import Firebase
 
-struct EditProfileView: View {
+struct ProfileView: View {
+    
     @State private var uname = ""
     @State private var mail = ""
     @State private var address = ""
@@ -27,17 +27,6 @@ struct EditProfileView: View {
     
     @StateObject var photoPicker = PhotoPicker()
     
-    
-//    func loadImage() {
-//        guard let inputImage = pickedImage else
-//        {
-//            return
-//        }
-//        profileImage = inputImage
-//    }
-    
-    
-    
     var body: some View {
         
         NavigationStack{
@@ -45,7 +34,7 @@ struct EditProfileView: View {
             VStack
                 {
                     VStack (alignment: .leading) {
-                        Text("Edit Profile").font(.system(size: 32, weight: .heavy, design: .monospaced))
+                        Text("Profile Details").font(.system(size: 32, weight: .heavy, design: .monospaced))
                     }
            
                     
@@ -120,13 +109,13 @@ struct EditProfileView: View {
 //                    }
                     
 //                    Group{
-                        FormField(value: $uname, icon: "person.fill", placeholder: "UserName")
+                        FormField(value: $uname, icon: "person.fill", placeholder: "UserName").disabled(true)
                         
-                        FormField(value: $mail, icon: "person.crop.square.filled.and.at.rectangle.fill", placeholder: "E-mail")
+                        FormField(value: $mail, icon: "person.crop.square.filled.and.at.rectangle.fill", placeholder: "E-mail").disabled(true)
                         
-                        FormField(value: $address, icon: "location.north.circle.fill", placeholder: "Address")
+                        FormField(value: $address, icon: "location.north.circle.fill", placeholder: "Address").disabled(true)
                         
-                        FormField(value: $phone, icon: "phone.fill", placeholder: "Phone")
+                    FormField(value: $phone, icon: "phone.fill", placeholder: "Phone").disabled(true)
                         
 //                        FormField(value: $uname, icon: "person.badge.clock.fill", placeholder: "Age")
                     
@@ -139,19 +128,9 @@ struct EditProfileView: View {
                             .multilineTextAlignment(.leading)
                             .autocorrectionDisabled(true)
                             .autocapitalization(.none)
+                            .disabled(true)
                     }.overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 4)).padding()
                         
-
-                    Button(action: {
-                        AddInfo(uname: self.uname, email: self.mail, address: self.address, phone: self.phone, age: self.age)
-                    }){
-                        HStack{
-                            Image(systemName: "checkmark.circle")
-                            Text("Save").font(.title)
-                        }
-                        .modifier(ButtonModifers())
-                        .padding()
-                    }
                     
                 }
             }.background(
@@ -188,26 +167,10 @@ struct EditProfileView: View {
         }
  
     }
-    func AddInfo(uname: String , email: String, address: String , phone: String, age: String)
-    {
-        let userID : String = (Auth.auth().currentUser?.uid)!
-        print("Current user id" + userID )
-        
-        let db = Firestore.firestore()
-        let docRef = db.collection("Users").document(userID)
-        
-        docRef.setData(["UserName": uname,"Email": email ,"Address": address, "Phone": phone, "Age": age]){ error in
-            if let error = error {
-                print("Error Writing Doc:\(error)")
-            } else {
-                print("Doc Written done")
-            }
-        }
-    }
 }
 
-struct EditProfileView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        ProfileView()
     }
 }
